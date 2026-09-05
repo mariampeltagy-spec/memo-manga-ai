@@ -911,3 +911,31 @@
   color:
     var(--text);
 }
+
+/* =========================================================
+   FIX TEXT COLORS
+   ========================================================= */
+
+html:not(.dark) .text-white {
+  color: #171717 !important;
+}
+
+html:not(.dark) .text-zinc-100 {
+  color: #171717 !important;
+}
+
+html:not(.dark) .text-zinc-200 {
+  color: #333333 !important;
+}
+
+html:not(.dark) .text-zinc-300 {
+  color: #555555 !important;
+}
+
+html:not(.dark) .text-zinc-400 {
+  color: #666666 !important;
+}
+
+html:not(.dark) .text-zinc-500 {
+  color: #777777 !important;
+}
