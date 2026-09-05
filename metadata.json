@@ -1,0 +1,6 @@
+{
+  "name": "Memo Manga AI",
+  "description": "Professional AI chat assistant for manga, anime, manhwa, and manhua in Arabic and English.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
