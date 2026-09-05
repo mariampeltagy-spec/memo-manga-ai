@@ -3,10 +3,6 @@
 /* =========================================================
    MEMO MANGA AI — MAIN STYLE
    ========================================================= */
-body {
-  margin: 0;
-  background: red !important;
-}
 
 @layer base {
 
@@ -154,6 +150,7 @@ body {
 .logo-area .logo-circle:hover,
 .top-title img:hover,
 .top-title .small-logo:hover {
+
   transform: scale(1.05);
 
   box-shadow:
@@ -211,7 +208,6 @@ body {
 
 .history-item.active {
   background: var(--brand-maroon-subtle) !important;
-
   color: var(--brand-maroon) !important;
 }
 
@@ -436,10 +432,6 @@ body {
 }
 
 
-/* =========================================================
-   AI MESSAGE
-   ========================================================= */
-
 .message.ai .avatar {
 
   background:
@@ -448,10 +440,6 @@ body {
   color: #ffffff !important;
 }
 
-
-/* =========================================================
-   USER MESSAGE
-   ========================================================= */
 
 .message.user .avatar {
 
@@ -471,7 +459,6 @@ body {
    ========================================================= */
 
 .message-content {
-
   line-height: 1.75;
 }
 
@@ -508,7 +495,6 @@ body {
    ========================================================= */
 
 .input-area {
-
   background:
     var(--background);
 }
@@ -631,14 +617,12 @@ body {
 .markdown-content {
 
   font-size: 0.95rem;
-
   line-height: 1.75;
 }
 
 .markdown-content p {
 
   margin-bottom: 0.9em;
-
   line-height: 1.75;
 }
 
@@ -697,7 +681,6 @@ body {
 .markdown-content li {
 
   margin-bottom: 0.4em;
-
   line-height: 1.65;
 }
 
@@ -891,14 +874,11 @@ body {
 }
 
 
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
 @media (max-width: 480px) {
 
   .welcome-logo,
   .welcome-logo-image {
+
     width:
       78px !important;
 
