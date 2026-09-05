@@ -1,21 +1,396 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memo Manga AI</title>
-    <meta name="description" content="Professional AI chat assistant for manga, anime, manhwa, and manhua in Arabic and English." />
-    <meta property="og:title" content="Memo Manga AI" />
-    <meta property="og:description" content="Professional AI chat assistant for manga, anime, manhwa, and manhua in Arabic and English." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  </head>
-  <body class="bg-neutral-50 text-zinc-900 dark:bg-[#212121] dark:text-zinc-100 antialiased selection:bg-[#800000]/20 selection:text-[#800000]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Memo Manga AI</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           MEMO MANGA AI LOGO
+           ===================================================== */
+
+        .logo-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            display: block;
+        }
+
+
+        /* =====================================================
+           TOP LOGO
+           ===================================================== */
+
+        .top-logo-image {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            display: block;
+        }
+
+
+        /* =====================================================
+           WELCOME LOGO
+           ===================================================== */
+
+        .welcome-logo-image {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow:
+                0 0 0 6px var(--soft),
+                0 0 30px rgba(128, 0, 0, 0.25);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo-area">
+
+                <img
+                    src="img/logo2.png"
+                    alt="Memo Manga AI"
+                    class="logo-image"
+                >
+
+                <div>
+
+                    <h1>
+                        Memo Manga AI
+                    </h1>
+
+                    <p>
+                        AI Manga Assistant
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="new-chat"
+                id="newChat"
+            >
+
+                ＋
+                محادثة جديدة
+
+            </button>
+
+
+            <div class="history">
+
+                <p class="history-title">
+                    المحادثات
+                </p>
+
+                <div id="historyList"></div>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <button id="themeButton">
+
+                    ◐
+                    تغيير المظهر
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN
+             ===================================================== -->
+
+        <main class="main">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <button
+                    id="menuButton"
+                    class="menu-button"
+                >
+                    ☰
+                </button>
+
+
+                <div class="top-title">
+
+                    <img
+                        src="img/logo2.png"
+                        alt="Memo Manga AI"
+                        class="top-logo-image"
+                    >
+
+                    Memo Manga AI
+
+                </div>
+
+
+                <button
+                    id="topThemeButton"
+                    class="theme-button"
+                >
+                    ◐
+                </button>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 CHAT CONTAINER
+                 ================================================= -->
+
+            <section
+                class="chat-container"
+                id="chatContainer"
+            >
+
+
+                <!-- =================================================
+                     WELCOME
+                     ================================================= -->
+
+                <div
+                    class="welcome"
+                    id="welcome"
+                >
+
+                    <img
+                        src="img/logo2.png"
+                        alt="Memo Manga AI"
+                        class="welcome-logo-image"
+                    >
+
+
+                    <h2>
+                        أهلاً بيك 👋
+                    </h2>
+
+
+                    <p>
+                        أنا Memo Manga AI
+                    </p>
+
+
+                    <span>
+                        مساعدك الذكي للمانجا والأنمي
+                        والدردشة والمعلومات.
+                    </span>
+
+
+
+                    <!-- =================================================
+                         SUGGESTIONS
+                         ================================================= -->
+
+                    <div class="suggestions">
+
+
+                        <button
+                            data-message="عامل إيه؟"
+                        >
+
+                            <div class="suggestion-icon">
+                                💬
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    دردشة
+                                </strong>
+
+                                <small>
+                                    عامل إيه؟
+                                </small>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <button
+                            data-message="عايز معلومات عن Boruto"
+                        >
+
+                            <div class="suggestion-icon">
+                                📚
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    معلومات مانجا
+                                </strong>
+
+                                <small>
+                                    Boruto
+                                </small>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <button
+                            data-message="احكيلي قصة Naruto"
+                        >
+
+                            <div class="suggestion-icon">
+                                📖
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    قصة مانجا
+                                </strong>
+
+                                <small>
+                                    Naruto
+                                </small>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <button
+                            data-message="عايز ترشيحات مانجا"
+                        >
+
+                            <div class="suggestion-icon">
+                                ⭐
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ترشيحات
+                                </strong>
+
+                                <small>
+                                    مانجا وأنمي
+                                </small>
+
+                            </div>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MESSAGES
+                     ================================================= -->
+
+                <div
+                    id="messages"
+                    class="messages"
+                ></div>
+
+
+            </section>
+
+
+
+            <!-- =====================================================
+                 INPUT
+                 ===================================================== -->
+
+            <div class="input-area">
+
+                <div class="input-box">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="اكتب رسالتك هنا..."
+                        rows="1"
+                    ></textarea>
+
+
+                    <button
+                        id="sendButton"
+                        class="send-button"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+
+                <div class="footer-text">
+                    Memo Manga AI
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
